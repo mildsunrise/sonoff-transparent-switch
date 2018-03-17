@@ -7,7 +7,7 @@ only one switch and no ability to report power) that uses the [Homie-ESP8266][]
 platform.
 
 Like most alternative firmwares, this uses MQTT to send and receive commands
-to turn the relay on or off. Unless the other alternative firmwares, this one
+to turn the relay on or off. Unlike the other alternative firmwares, this one
 allows you to plug a physical switch (pushbuttons aren't supported yet) between
 GND and GPIO#14. You can then use that switch to turn the light on or off,
 in addition to MQTT.
@@ -50,8 +50,11 @@ light:
     name: "Dining room"
     state_topic: "homie/<id>/switch/on"
     command_topic: "homie/<id>/switch/on/set"
+    availability_topic: "homie/<id>/$online"
     payload_on: "true"
     payload_off: "false"
+    payload_available: "true"
+    payload_not_available: "false"
 ~~~
 
 
