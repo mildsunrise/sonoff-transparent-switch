@@ -87,7 +87,7 @@ void setup() {
   lastSwitchState = activeSwitchState = digitalRead(PIN_SWITCH);
   digitalWrite(PIN_RELAY, LOW);
 
-  Homie_setFirmware("sonoff-transparent-switch", "1.2.0");
+  Homie_setFirmware("sonoff-transparent-switch", "1.3.0");
   Homie.setLedPin(PIN_LED, LOW).setResetTrigger(PIN_BUTTON, LOW, 5000);
 
   detachedSetting.setDefaultValue(false);
